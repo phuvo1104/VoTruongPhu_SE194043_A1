@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="Window3" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="199*"/>
+            <RowDefinition Height="235*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Welcome!" HorizontalAlignment="Left" Margin="14,5,0,0" VerticalAlignment="Top" Height="50" Width="150" RenderTransformOrigin="0.5,0.5" FontSize="20">
+
+        </Label>
+        <DataGrid ItemsSource="{Binding Orders}" SelectedItem="{Binding SelectedOrder}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0,39,0,0" Height="175" VerticalAlignment="Top" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding OrderID}" Width="Auto"/>
+                <DataGridTextColumn Header="Ngày đặt" Binding="{Binding OrderDate}" Width="*"/>
+                <DataGridTextColumn Header="Khách hàng" Binding="{Binding CustomerName}" Width="*"/>
+                <DataGridTextColumn Header="Tổng tiền" Binding="{Binding TotalAmount}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Content="Chỉnh sửa thông tin" HorizontalAlignment="Left" Margin="0,15,0,0" VerticalAlignment="Top" Height="50" Width="315" RenderTransformOrigin="0.5,0.5" FontSize="20" Grid.Row="1"/>
+        <TextBlock Text="Tên công ty:" Margin="20,50,665,160" Grid.Row="1"/>
+        <TextBox Width="150" Text="{Binding CompanyNameInput, UpdateSourceTrigger=PropertyChanged}" Margin="20,70,630,130" Grid.Row="1" />
+
+        <TextBlock Text="Số Điện Thoại:" Margin="460,50,225,160" Grid.Row="1"/>
+        <TextBox Width="150" Text="{Binding CompanyNameInput, UpdateSourceTrigger=PropertyChanged}" Margin="460,70,190,130" Grid.Row="1" />
+        <TextBlock Text="Tên Liên Hệ:" Margin="235,50,450,160" Grid.Row="1"/>
+        <TextBox Width="150" Text="{Binding CompanyNameInput, UpdateSourceTrigger=PropertyChanged}" Margin="235,70,415,130" Grid.Row="1" />
+        <Button Content="Thêm" Command="{Binding AddCommand}" Margin="485,9,235,170"/>
+        <Button Content="Sửa" Command="{Binding EditCommand}" Margin="585,9,135,170"/>
+        <Button Content="Xóa" Command="{Binding DeleteCommand}" Margin="685,9,35,170"/>
+        <TextBox Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged}" Margin="130,14,470,165"/>
+        <Button Content="Tìm kiếm" Command="{Binding SearchCommand}" Margin="350,14,370,165"/>
     </Grid>
+
+
 </Window>

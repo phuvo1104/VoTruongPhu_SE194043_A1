@@ -7,12 +7,17 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <Label Content="Đăng nhập" HorizontalAlignment="Left" Margin="70,78,0,0" VerticalAlignment="Top" Width="200" FontSize="30"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Center" Margin="0,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Center" Margin="0,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" />
-        <Button Content="Login" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Label Content="Username:" HorizontalAlignment="Left" Height="50" Margin="188,144,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.021,0.447"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Height="50" Margin="188,247,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Đăng nhập Admin" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Width="282" FontSize="30"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="38,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="38,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" />
+        <Button Content="Login Admin" HorizontalAlignment="Left" Margin="228,227,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
+        <Label Content="Username:" HorizontalAlignment="Left" Height="50" Margin="36,60,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.021,0.447"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Height="50" Margin="38,141,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="txtUsername_Copy" HorizontalAlignment="Left" Margin="440,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
+        <Label Content="Tìm Kiếm tài khoản " HorizontalAlignment="Left" Margin="440,10,0,0" VerticalAlignment="Top" Width="282" FontSize="30"/>
+        <Label Content="SĐT :" HorizontalAlignment="Left" Height="50" Margin="451,60,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.021,0.447"/>
+        <Button Content="Tìm số đth" HorizontalAlignment="Left" Margin="632,126,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
 
     </Grid>
+
 </Window>
