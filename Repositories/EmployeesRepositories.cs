@@ -1,5 +1,5 @@
 ﻿using BusinessObject;
-using Repositories;
+using DataAccessObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public class EmployeesRepostitories : IEmployeesRepositories
+    public class EmployeesRepositories : IEmployeesRepositories
     {
         EmployeeDAO employee = new EmployeeDAO();
         public Employees FindByUsernameAndPassword(string username, string password)
