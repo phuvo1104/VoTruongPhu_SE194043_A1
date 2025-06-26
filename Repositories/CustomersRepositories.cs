@@ -1,0 +1,40 @@
+﻿using BusinessObject;
+using DataAccessObject;
+using Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Repositories
+{
+    public class CustomersRepositories : ICustomersRepositories
+    {
+        CustomerDAO customerDAO = new CustomerDAO();
+        public void AddCustomers(Customers customers)
+        {
+            customerDAO.AddCustomers(customers);
+        }
+
+        public void DeleteCustomers(Customers customers)
+        {
+            customerDAO.DeleteCustomers(customers);
+        }
+
+        public List<Customers> GetAllCustomers()
+        {
+            return customerDAO.GetAllCustomers();
+        }
+
+        public Customers GetCustomerById(int id)
+        {
+            return customerDAO.GetCustomerById(id);
+        }
+
+        public void UpdateCustomers(Customers customers)
+        {
+            customerDAO.UpdateCustomers(customers);
+        }
+    }
+}
