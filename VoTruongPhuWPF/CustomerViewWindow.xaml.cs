@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace VoTruongPhuWPF
 {
     /// <summary>
-    /// Interaction logic for Window3.xaml
+    /// Interaction logic for CustomerViewWindow.xaml
     /// </summary>
-    public partial class Window3 : Window
+    public partial class CustomerViewWindow : Window
     {
-        public Window3()
+        public CustomerViewWindow()
         {
             InitializeComponent();
         }

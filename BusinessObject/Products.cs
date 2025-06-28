@@ -23,6 +23,10 @@ namespace BusinessObject
             UnitPrice = unitPrice;
             UnitsInStock = unitsInStock;
         }
+        public Products()
+        {
+            // Default constructor for EF Core
+        }
         public override string ToString()
         {
             return $"{ProductID}: {ProductName}, {CategoryID}, {UnitPrice:C}, {UnitsInStock} units in stock";

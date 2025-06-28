@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessObject;
-
+using Microsoft.EntityFrameworkCore;
 namespace DataAccessObject
 {
     public class EmployeeDAO
@@ -15,5 +15,11 @@ namespace DataAccessObject
         {
             return context.Employees.FirstOrDefault(e => e.UserName == username && e.Password == password);
         }
+
+        public List<Employees> GetAllEmployees()
+        {
+            return context.Employees.ToList();
+        }
+
     }
 }

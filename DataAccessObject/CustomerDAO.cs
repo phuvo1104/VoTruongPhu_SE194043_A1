@@ -18,6 +18,7 @@ namespace DataAccessObject
         public void AddCustomers(Customers customers)
         {
             context.Customers.Add(customers);
+            context.SaveChanges();
         }
         public void UpdateCustomers(Customers customers)
         {
@@ -28,10 +29,15 @@ namespace DataAccessObject
         {
             return context.Customers.FirstOrDefault(c => c.CustomerID == id);
         }
-        public void DeleteCustomers(Customers customer)
+        public void DeleteCustomers(int id)
         {
-            context.Customers.Remove(customer);
-            context.SaveChanges();
+            var customer = context.Customers.FirstOrDefault(c => c.CustomerID == id);
+            if (customer != null)
+            {
+                context.Customers.Remove(customer);
+                context.SaveChanges();
+            }
         }
+
     }
 }

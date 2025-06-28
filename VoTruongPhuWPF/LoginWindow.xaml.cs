@@ -21,27 +21,61 @@ namespace VoTruongPhuWPF
     public partial class Window1 : Window
     {
         private readonly EmployeesService employeesService = new EmployeesService();
-        
+        private readonly CustomerService customerService = new CustomerService();
+
         public Window1()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        // Employee login
+        private void BtnEmployeeLogin_Click(object sender, RoutedEventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-            Employees employee = employeesService.FindByUsernameAndPassword(username, password);
+            string email = txtEmpEmail.Text;
+            string password = txtEmpPassword.Password;
+
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter both email and password.");
+                return;
+            }
+
+            var employee = employeesService.FindByUsernameAndPassword(email, password);
             if (employee != null)
             {
-       
+                MessageBox.Show($"Welcome {employee.Name}!");
+                new Admin().Show();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Invalid username or password");
+                MessageBox.Show("Invalid email or password.");
             }
-
         }
 
+        // Customer login
+        private void BtnCustomerLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string phone = txtCustomerPhone.Text;
+            if (string.IsNullOrWhiteSpace(phone))
+            {
+                MessageBox.Show("Please enter your phone number.");
+                return;
+            }
+
+            var customer = customerService.GetAllCustomers()
+                .FirstOrDefault(c => c.Phone == phone);
+
+            if (customer != null)
+            {
+                MessageBox.Show($"Welcome {customer.ContactName}!");
+                new Customer(customer).Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Phone number not found.");
+            }
+        }
     }
 }

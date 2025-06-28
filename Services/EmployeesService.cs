@@ -1,5 +1,7 @@
 ﻿using BusinessObject;
 using Repositories;
+using Repositories.Repositories;
+using Respositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +15,16 @@ namespace Services
         private readonly IEmployeesRepositories employeesRepository;
         public EmployeesService()
         {
-            employeesRepository = new EmployeesRepositories();
+            employeesRepository = new EmployeesRepostitories();
         }
         public Employees FindByUsernameAndPassword(string username, string password)
         {
             return employeesRepository.FindByUsernameAndPassword(username, password);
         }
+        public List<Employees> GetAllEmployees()
+        {
+            return employeesRepository.GetAllEmployees();
+        }
+
     }
 }

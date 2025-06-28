@@ -21,11 +21,6 @@ namespace Services
             customerRepository.AddCustomers(customers);
         }
 
-        public void DeleteCustomers(Customers customers)
-        {
-            customerRepository.DeleteCustomers(customers);
-        }
-
         public List<Customers> GetAllCustomers()
         {
             return customerRepository.GetAllCustomers();
@@ -34,6 +29,14 @@ namespace Services
         {
             customerRepository.UpdateCustomers(customers);
         }
-       
+        public Customers GetCustomerById(int id)
+        {
+            return customerRepository.GetCustomerById(id);
+        }
+
+        public void DeleteCustomers(int id)
+        {
+            customerRepository.DeleteCustomers(id);
+        }
     }
 }

@@ -11,8 +11,8 @@ namespace Repositories
         List<Customers> GetAllCustomers();
         void AddCustomers(Customers customers);
         void UpdateCustomers(Customers customers);
-        void DeleteCustomers(Customers customers);
-        
+        void DeleteCustomers(int id);
+        Customers GetCustomerById(int id);
 
     }
 }

@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-
-    public interface IEmployeesRepositories
+    public interface IOrderDetailRepositories
     {
-        public Employees FindByUsernameAndPassword(string username, string password);
-        List<Employees> GetAllEmployees();
+        List<OrderDetails> GetOrderDetailsByOrderId(int orderId);
+        void DeleteOrderDetail(int orderId, int productId);
     }
 }

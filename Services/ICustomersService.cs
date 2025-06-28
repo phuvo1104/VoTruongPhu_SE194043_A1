@@ -12,7 +12,7 @@ namespace Services
         List<Customers> GetAllCustomers();
         void AddCustomers(Customers customers);
         void UpdateCustomers(Customers customers);
-        void DeleteCustomers(Customers customers);
+        void DeleteCustomers(int id);
         public Customers GetCustomerById(int id);
     }
 }

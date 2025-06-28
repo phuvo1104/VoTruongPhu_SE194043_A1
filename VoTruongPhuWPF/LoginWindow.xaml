@@ -1,23 +1,48 @@
 ﻿<Window x:Class="VoTruongPhuWPF.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VoTruongPhuWPF"
-        mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
-    <Grid>
-        <Label Content="Đăng nhập Admin" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Width="282" FontSize="30"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="38,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="38,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" />
-        <Button Content="Login Admin" HorizontalAlignment="Left" Margin="228,227,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
-        <Label Content="Username:" HorizontalAlignment="Left" Height="50" Margin="36,60,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.021,0.447"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Height="50" Margin="38,141,0,0" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="txtUsername_Copy" HorizontalAlignment="Left" Margin="440,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
-        <Label Content="Tìm Kiếm tài khoản " HorizontalAlignment="Left" Margin="440,10,0,0" VerticalAlignment="Top" Width="282" FontSize="30"/>
-        <Label Content="SĐT :" HorizontalAlignment="Left" Height="50" Margin="451,60,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.021,0.447"/>
-        <Button Content="Tìm số đth" HorizontalAlignment="Left" Margin="632,126,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
+        Title="Đăng nhập hệ thống" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" Width="300" >
+            <TextBlock Text="Đăng nhập Admin"
+                       FontSize="26" FontWeight="Bold"
+                       Margin="0 0 0 20" TextAlignment="Center"/>
+
+            <TextBlock Text="Email:"/>
+            <TextBox  x:Name="txtEmpEmail" Height="30" Margin="0 0 0 10"/>
+
+            <TextBlock Text="Password:"/>
+            <PasswordBox x:Name="txtEmpPassword" Height="30" Margin="0 0 0 20"/>
+
+            <Button x:Name="btnEmployeeLogin"
+                    Content="Login Admin"
+                    Height="35" Width="120"
+                    Click="BtnEmployeeLogin_Click"/>
+        </StackPanel>
+
+       
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" Width="300" >
+            <TextBlock Text="Đăng nhập Khách hàng"
+                       FontSize="26" FontWeight="Bold"
+                       Margin="0 0 0 20" TextAlignment="Center"/>
+
+            <TextBlock Text="Số điện thoại:"/>
+            <TextBox  x:Name="txtCustomerPhone" Height="30" Margin="0 0 0 20"/>
+
+            <Button x:Name="btnCustomerLogin"
+                    Content="Login Customer"
+                    Height="35" Width="120"
+                    Click="BtnCustomerLogin_Click"/>
+        </StackPanel>
     </Grid>
-
 </Window>

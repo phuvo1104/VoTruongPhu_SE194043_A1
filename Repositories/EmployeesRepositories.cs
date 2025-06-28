@@ -8,12 +8,20 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public class EmployeesRepositories : IEmployeesRepositories
+    namespace Repositories
     {
-        EmployeeDAO employee = new EmployeeDAO();
-        public Employees FindByUsernameAndPassword(string username, string password)
+        public class EmployeesRepostitories : IEmployeesRepositories
         {
-            return employee.FindByUsernameAndPassword(username, password);
+            EmployeeDAO employee = new EmployeeDAO();
+            public Employees FindByUsernameAndPassword(string username, string password)
+            {
+                return employee.FindByUsernameAndPassword(username, password);
+            }
+            public List<Employees> GetAllEmployees()
+            {
+                return employee.GetAllEmployees();
+            }
         }
+
     }
 }
