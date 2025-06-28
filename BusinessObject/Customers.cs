@@ -27,7 +27,7 @@ namespace BusinessObject
         }
         public Customers()
         {
-            // Default constructor for EF Core
+            
         }
         public override string ToString()
         {
