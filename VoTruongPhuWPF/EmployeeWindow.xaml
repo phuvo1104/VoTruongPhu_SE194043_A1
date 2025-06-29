@@ -4,14 +4,14 @@
         Title="Employee Dashboard"
         Height="500" Width="820"
         WindowStartupLocation="CenterScreen"
-        Background="#f4f6fa">
+        Background="White">
 
     <!-- ===== Card bên TRÁI màn hình ===== -->
     <Border Width="400"
             Padding="30"
             Background="White"
             CornerRadius="12"
-            BorderBrush="#e0e0e0"
+            BorderBrush="White"
             BorderThickness="1"
             HorizontalAlignment="Left"
             Margin="40,0,0,0"
@@ -22,7 +22,7 @@
             <DropShadowEffect BlurRadius="8"
                               ShadowDepth="2"
                               Direction="270"
-                              Color="#33000000"/>
+                              Color="White"/>
         </Border.Effect>
 
         <!-- ========= NỘI DUNG ========= -->
@@ -68,12 +68,12 @@
                     Click="ViewReports_Click"/>
 
             <Rectangle Grid.Row="5" Height="1" Margin="0,12"
-                       Fill="#e0e0e0"/>
+                       Fill="White"/>
 
             <Button x:Name="btnLogout"
                     Content="Logout"
                     Grid.Row="6" Height="40" FontSize="16"
-                    Background="#ff6b6b" Foreground="White"
+                    Background="White" Foreground="black"
                     Margin="0,6"
                     Click="Logout_Click"/>
         </Grid>
