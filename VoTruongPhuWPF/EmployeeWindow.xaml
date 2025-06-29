@@ -13,12 +13,11 @@
             CornerRadius="12"
             BorderBrush="#e0e0e0"
             BorderThickness="1"
-            HorizontalAlignment="Left"      
-        Margin="40,0,0,0"
-       
-        VerticalAlignment="Center">
+            HorizontalAlignment="Left"
+            Margin="40,0,0,0"
+            VerticalAlignment="Center">
 
-        <!-- Bóng đổ nhẹ (không còn lỗi) -->
+        <!-- Bóng đổ nhẹ -->
         <Border.Effect>
             <DropShadowEffect BlurRadius="8"
                               ShadowDepth="2"
@@ -45,32 +44,37 @@
                        FontWeight="SemiBold"
                        Foreground="#333"
                        HorizontalAlignment="Center"
-                       Margin="0 0 0 20"/>
+                       Margin="0,0,0,20"/>
 
             <!-- Các nút chức năng -->
-            <Button Content="Manage Customers"
-                    Grid.Row="1" Height="45" FontSize="16" Margin="0 6"
+            <Button x:Name="btnManageCustomers"
+                    Content="Manage Customers"
+                    Grid.Row="1" Height="45" FontSize="16" Margin="0,6"
                     Click="ManageCustomers_Click"/>
 
-            <Button Content="Manage Products"
-                    Grid.Row="2" Height="45" FontSize="16" Margin="0 6"
+            <Button x:Name="btnManageProducts"
+                    Content="Manage Products"
+                    Grid.Row="2" Height="45" FontSize="16" Margin="0,6"
                     Click="ManageProducts_Click"/>
 
-            <Button Content="Create / View Orders"
-                    Grid.Row="3" Height="45" FontSize="16" Margin="0 6"
+            <Button x:Name="btnManageOrders"
+                    Content="Create / View Orders"
+                    Grid.Row="3" Height="45" FontSize="16" Margin="0,6"
                     Click="ManageOrders_Click"/>
 
-            <Button Content="View Reports"
-                    Grid.Row="4" Height="45" FontSize="16" Margin="0 6"
+            <Button x:Name="btnViewReports"
+                    Content="View Reports"
+                    Grid.Row="4" Height="45" FontSize="16" Margin="0,6"
                     Click="ViewReports_Click"/>
 
-            <Rectangle Grid.Row="5" Height="1" Margin="0 12"
+            <Rectangle Grid.Row="5" Height="1" Margin="0,12"
                        Fill="#e0e0e0"/>
 
-            <Button Content="Logout"
+            <Button x:Name="btnLogout"
+                    Content="Logout"
                     Grid.Row="6" Height="40" FontSize="16"
                     Background="#ff6b6b" Foreground="White"
-                    Margin="0 6"
+                    Margin="0,6"
                     Click="Logout_Click"/>
         </Grid>
     </Border>

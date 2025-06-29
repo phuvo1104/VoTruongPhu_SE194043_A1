@@ -44,7 +44,9 @@ namespace VoTruongPhuWPF
             if (employee != null)
             {
                 MessageBox.Show($"Welcome {employee.Name}!");
-                new Admin().Show();
+                var dashboard = new Window2();
+                dashboard.Show();              
+
                 this.Close();
             }
             else

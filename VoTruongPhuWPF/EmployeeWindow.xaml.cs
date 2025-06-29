@@ -26,7 +26,7 @@ namespace VoTruongPhuWPF
         private void ManageCustomers_Click(object sender, RoutedEventArgs e)
         {
             
-            var win = new CustomerWindow();
+            var win = new CustomerViewWindow();
             win.ShowDialog();
         }
 
