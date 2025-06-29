@@ -27,8 +27,11 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"          Binding="{Binding OrderID}"       Width="70"/>
                 <DataGridTextColumn Header="Ngày đặt"    Binding="{Binding OrderDate}"     Width="120"/>
+                <DataGridTextColumn Header="Số lượng"   Binding="{Binding Quantity}"   Width="120"/>
+                <DataGridTextColumn Header="Đơn giá"   Binding="{Binding UnitPrice}"   Width="120"/>
+                <DataGridTextColumn Header="Giảm giá (%)"   Binding="{Binding Discount}"   Width="120"/>
                 <DataGridTextColumn Header="Tổng tiền"   Binding="{Binding TotalAmount}"   Width="120"/>
-                <!-- thêm cột khác nếu cần -->
+               
             </DataGrid.Columns>
         </DataGrid>
 

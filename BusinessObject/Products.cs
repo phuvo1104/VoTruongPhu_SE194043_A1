@@ -12,16 +12,26 @@ namespace BusinessObject
         [Key]
         public int ProductID { get; set; }
         public string ProductName { get; set; }
+        public int SupplierID { get; set; }
         public int CategoryID { get; set; }
-        public double UnitPrice { get; set; }
+        public string QuantityPerUnit { get; set; }
+        public decimal UnitPrice { get; set; }
         public int UnitsInStock { get; set; }
-        public Products(int productID, string productName, int categoryID, double unitPrice, int unitsInStock)
+        public int UnitsOnOrder { get; set; }
+        public int ReorderLevel { get; set; }
+        public bool Discontinued { get; set; }
+        public Products(int productId, string productName, int supplierId, int categoryId, string quantityPerUnit, decimal unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, bool discontinued)
         {
-            ProductID = productID;
+            ProductID = productId;
             ProductName = productName;
-            CategoryID = categoryID;
+            SupplierID = supplierId;
+            CategoryID = categoryId;
+            QuantityPerUnit = quantityPerUnit;
             UnitPrice = unitPrice;
             UnitsInStock = unitsInStock;
+            UnitsOnOrder = unitsOnOrder;
+            ReorderLevel = reorderLevel;
+            Discontinued = discontinued;
         }
         public Products()
         {
@@ -29,7 +39,7 @@ namespace BusinessObject
         }
         public override string ToString()
         {
-            return $"{ProductID}: {ProductName}, {CategoryID}, {UnitPrice:C}, {UnitsInStock} units in stock";
+            return $"{ProductID}: {ProductName}, {SupplierID}, {CategoryID}, {QuantityPerUnit}, {UnitPrice}, {UnitsInStock}, {UnitsOnOrder}, {ReorderLevel}, {Discontinued}";
         }
     }
 }

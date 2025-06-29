@@ -10,7 +10,10 @@ namespace DataAccessObject
 
         public List<OrderDetails> GetOrderDetailsByOrderId(int orderId)
         {
-            return context.OrderDetails.Where(o => o.OrderID == orderId).ToList();
+            using var ctx = new AppDbContext();
+            return ctx.OrderDetails
+                      .Where(d => d.OrderID == orderId)
+                      .ToList();
         }
         public void DeleteOrderDetail(int orderId, int productId)
         {

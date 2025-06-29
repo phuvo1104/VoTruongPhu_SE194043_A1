@@ -45,8 +45,8 @@ namespace VoTruongPhuWPF
             {
                 MessageBox.Show($"Welcome {employee.Name}!");
                 var dashboard = new Window2();
-                dashboard.Show();              
-
+                dashboard.Show();
+                
                 this.Close();
             }
             else

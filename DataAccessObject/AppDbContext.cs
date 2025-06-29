@@ -23,6 +23,12 @@ namespace DataAccessObject
             options.UseSqlServer("Server=BOSS\\SQLEXPRESS;Database=Lucy_SalesData;User Id=sa;Password=12345;TrustServerCertificate=True;MultipleActiveResultSets=True;"
 );
         }
+        protected override void OnModelCreating(ModelBuilder mb)
+        {
+            mb.Entity<OrderDetails>()
+              .HasKey(od => new { od.OrderID, od.ProductID });   // composite key
+        }
+
     }
 
 }

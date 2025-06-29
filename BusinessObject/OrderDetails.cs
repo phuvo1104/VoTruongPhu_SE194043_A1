@@ -15,6 +15,8 @@ namespace BusinessObject
         public double UnitPrice { get; set; }
         public int Quantity { get; set; }
         public double Discount { get; set; }
+        public Orders? Order { get; set; }
+        public Products? Product { get; set; }
         public OrderDetails(int orderID, int productID, double unitPrice, int quantity, double discount)
         {
             OrderID = orderID;
