@@ -69,7 +69,7 @@ namespace VoTruongPhuWPF
             if (customer != null)
             {
                 MessageBox.Show($"Welcome {customer.ContactName}!");
-                new Customer(customer).Show();
+                new CustomerViewWindow(customer).Show();
                 this.Close();
             }
             else

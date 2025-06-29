@@ -1,20 +1,77 @@
 ﻿<Window x:Class="VoTruongPhuWPF.Window2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VoTruongPhuWPF"
-        mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800">
-    <Grid Background="#f4f4f4">
-        
-            <TextBlock Text="Welcome, Employee!" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+        Title="Employee Dashboard"
+        Height="500" Width="820"
+        WindowStartupLocation="CenterScreen"
+        Background="#f4f6fa">
 
-            <Button Content="Manage Customers" Click="ManageCustomers_Click" Height="40" FontSize="16"/>
-            <Button Content="Manage Products" Click="ManageProducts_Click" Height="40" FontSize="16"/>
-            <Button Content="Create/View Orders" Click="ManageOrders_Click" Height="40" FontSize="16" Margin="0,258,0,136"/>
-            <Button Content="View Reports" Click="ViewReports_Click" Height="40" FontSize="16" Margin="0,137,0,257"/>
-            <Button Content="Logout" Click="Logout_Click" Height="40" FontSize="16" Background="LightCoral" Margin="0,315,0,79"/>
-        
-    </Grid>
+    <!-- ===== Card bên TRÁI màn hình ===== -->
+    <Border Width="400"
+            Padding="30"
+            Background="White"
+            CornerRadius="12"
+            BorderBrush="#e0e0e0"
+            BorderThickness="1"
+            HorizontalAlignment="Left"      
+        Margin="40,0,0,0"
+       
+        VerticalAlignment="Center">
+
+        <!-- Bóng đổ nhẹ (không còn lỗi) -->
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="8"
+                              ShadowDepth="2"
+                              Direction="270"
+                              Color="#33000000"/>
+        </Border.Effect>
+
+        <!-- ========= NỘI DUNG ========= -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Tiêu đề -->
+            <TextBlock Text="Welcome, Employee!"
+                       Grid.Row="0"
+                       FontSize="26"
+                       FontWeight="SemiBold"
+                       Foreground="#333"
+                       HorizontalAlignment="Center"
+                       Margin="0 0 0 20"/>
+
+            <!-- Các nút chức năng -->
+            <Button Content="Manage Customers"
+                    Grid.Row="1" Height="45" FontSize="16" Margin="0 6"
+                    Click="ManageCustomers_Click"/>
+
+            <Button Content="Manage Products"
+                    Grid.Row="2" Height="45" FontSize="16" Margin="0 6"
+                    Click="ManageProducts_Click"/>
+
+            <Button Content="Create / View Orders"
+                    Grid.Row="3" Height="45" FontSize="16" Margin="0 6"
+                    Click="ManageOrders_Click"/>
+
+            <Button Content="View Reports"
+                    Grid.Row="4" Height="45" FontSize="16" Margin="0 6"
+                    Click="ViewReports_Click"/>
+
+            <Rectangle Grid.Row="5" Height="1" Margin="0 12"
+                       Fill="#e0e0e0"/>
+
+            <Button Content="Logout"
+                    Grid.Row="6" Height="40" FontSize="16"
+                    Background="#ff6b6b" Foreground="White"
+                    Margin="0 6"
+                    Click="Logout_Click"/>
+        </Grid>
+    </Border>
 </Window>

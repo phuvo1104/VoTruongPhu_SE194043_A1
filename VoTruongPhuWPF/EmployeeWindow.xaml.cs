@@ -23,5 +23,40 @@ namespace VoTruongPhuWPF
         {
             InitializeComponent();
         }
+        private void ManageCustomers_Click(object sender, RoutedEventArgs e)
+        {
+            
+            var win = new CustomerWindow();
+            win.ShowDialog();
+        }
+
+        private void ManageProducts_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new ProductWindow();
+            win.ShowDialog();
+        }
+
+        private void ManageOrders_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new OrderWindow();
+            win.ShowDialog();
+        }
+
+        private void ViewReports_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new ReportWindow();
+            win.ShowDialog();
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            
+            new Window1().Show();
+            
+
+            this.Close();  
+        }
     }
 }
+    
+
